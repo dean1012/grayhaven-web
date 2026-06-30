@@ -56,8 +56,10 @@ find site/frontend -maxdepth 1 -type f -name '*.html' -print0 \
   | xargs -0 -r ./node_modules/.bin/html-validate --config .htmlvalidate.json
 find site/frontend/css -maxdepth 1 -type f -name '*.css' -print0 \
   | xargs -0 -r ./node_modules/.bin/stylelint --config stylelint.config.cjs
-find site/frontend/js -maxdepth 1 -type f -name '*.js' -print0 \
-  | xargs -0 -r ./node_modules/.bin/eslint --config eslint.config.mjs
+if [ -d site/frontend/js ]; then
+  find site/frontend/js -maxdepth 1 -type f -name '*.js' -print0 \
+    | xargs -0 -r ./node_modules/.bin/eslint --config eslint.config.mjs
+fi
 git ls-files '*.yml' '*.yaml' | xargs -r yamllint
 git ls-files '*.md' | xargs -r markdownlint-cli2
 ```
