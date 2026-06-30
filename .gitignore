@@ -12,6 +12,9 @@ AGENTS.md
 AGENTS.override.md
 .codex/
 
+# Local Git hooks
+.githooks/
+
 # Logs
 *.log
 

@@ -8,6 +8,7 @@ Do not commit sensitive information to this repository.
 ## Table of Contents
 
 - [Development Setup](#development-setup)
+- [Push Confirmation Hook](#push-confirmation-hook)
 - [Validation](#validation)
 - [Pull Requests](#pull-requests)
 - [Website Style Guidelines](#website-style-guidelines)
@@ -37,6 +38,22 @@ npm install \
   html-validate@11.5.3 \
   stylelint@17.14.0 \
   stylelint-config-standard@40.0.0
+```
+
+[Back to top](#contributing)
+
+## Push Confirmation Hook
+
+Pushing to `dev` publishes to the development website, and promoting to `main`
+publishes to production. Install the provided pre-push hook to require
+interactive confirmation before every push. The hook warns that pushing may
+publish website changes and requires typing `publish` to continue:
+
+```bash
+mkdir -p .githooks
+cp templates/pre-push .githooks/pre-push
+chmod 0755 .githooks/pre-push
+git config core.hooksPath .githooks
 ```
 
 [Back to top](#contributing)
