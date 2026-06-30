@@ -1,0 +1,13 @@
+{
+  "editor.defaultFormatter": null,
+  "editor.formatOnSave": false,
+  "eslint.options": {
+    "overrideConfigFile": "eslint.config.mjs"
+  },
+  "eslint.validate": [
+    "javascript"
+  ],
+  "stylelint.validate": [
+    "css"
+  ]
+}
