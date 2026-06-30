@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+remote_name="${1:-unknown}"
+remote_url="${2:-unknown}"
+ref_lines=()
+
+while IFS= read -r line; do
+  ref_lines+=("$line")
+done
+
+printf 'About to push to %s (%s).\n' "$remote_name" "$remote_url" >&2
+printf 'Warning: pushing may publish website changes.\n' >&2
+
+if ((${#ref_lines[@]} > 0)); then
+  printf '\nRefs queued for push:\n' >&2
+  printf '  %s\n' "${ref_lines[@]}" >&2
+fi
+
+printf '\nType "publish" to continue: ' >&2
+
+if [[ ! -t 0 ]]; then
+  if [[ -r /dev/tty ]]; then
+    read -r confirmation < /dev/tty
+  else
+    printf '\nPush rejected: interactive confirmation is required.\n' >&2
+    exit 1
+  fi
+else
+  read -r confirmation
+fi
+
+if [[ "$confirmation" != "publish" ]]; then
+  printf 'Push rejected.\n' >&2
+  exit 1
+fi
+
+printf 'Push confirmed.\n' >&2
