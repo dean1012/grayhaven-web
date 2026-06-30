@@ -54,14 +54,23 @@ python3 -m json.tool .htmlvalidate.json >/dev/null
   stylelint.config.cjs
 find site/frontend -maxdepth 1 -type f -name '*.html' -print0 \
   | xargs -0 -r ./node_modules/.bin/html-validate --config .htmlvalidate.json
-find site/frontend/css -maxdepth 1 -type f -name '*.css' -print0 \
-  | xargs -0 -r ./node_modules/.bin/stylelint --config stylelint.config.cjs
-if [ -d site/frontend/js ]; then
-  find site/frontend/js -maxdepth 1 -type f -name '*.js' -print0 \
-    | xargs -0 -r ./node_modules/.bin/eslint --config eslint.config.mjs
-fi
 git ls-files '*.yml' '*.yaml' | xargs -r yamllint
 git ls-files '*.md' | xargs -r markdownlint-cli2
+```
+
+If the repository uses a `css/` directory, lint all CSS files with this command:
+
+```bash
+find site/frontend/css -maxdepth 1 -type f -name '*.css' -print0 \
+  | xargs -0 -r ./node_modules/.bin/stylelint --config stylelint.config.cjs
+```
+
+If the repository uses a `js/` directory, lint all JavaScript files with this
+command:
+
+```bash
+find site/frontend/js -maxdepth 1 -type f -name '*.js' -print0 \
+  | xargs -0 -r ./node_modules/.bin/eslint --config eslint.config.mjs
 ```
 
 After changing validation configuration files, restart the relevant VS Code

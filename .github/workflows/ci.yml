@@ -60,8 +60,10 @@ jobs:
 
       - name: Run CSS lint
         run: |
-          find site/frontend/css -maxdepth 1 -type f -name '*.css' -print0 \
-            | xargs -0 -r ./node_modules/.bin/stylelint --config stylelint.config.cjs
+          if [ -d site/frontend/css ]; then
+            find site/frontend/css -maxdepth 1 -type f -name '*.css' -print0 \
+              | xargs -0 -r ./node_modules/.bin/stylelint --config stylelint.config.cjs
+          fi
         shell: bash
 
       - name: Run JavaScript lint
