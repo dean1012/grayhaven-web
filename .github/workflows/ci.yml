@@ -1,0 +1,77 @@
+---
+name: CI
+
+"on":
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e  # v6.4.0
+        with:
+          node-version: "24"
+
+      - name: Install website linting tools
+        run: |
+          npm install \
+            --prefix . \
+            --no-audit \
+            --no-fund \
+            --no-save \
+            --no-package-lock \
+            @eslint/js@10.0.1 \
+            eslint@10.6.0 \
+            globals@17.7.0 \
+            html-validate@11.5.3 \
+            stylelint@17.14.0 \
+            stylelint-config-standard@40.0.0
+
+      - name: Validate lint configuration
+        run: |
+          python3 -m json.tool .vscode/extensions.json >/dev/null
+          python3 -m json.tool .vscode/settings.json >/dev/null
+          python3 -m json.tool .htmlvalidate.json >/dev/null
+          ./node_modules/.bin/eslint --config eslint.config.mjs \
+            eslint.config.mjs \
+            stylelint.config.cjs
+        shell: bash
+
+      - name: Run HTML lint
+        run: |
+          find site/frontend -maxdepth 1 -type f -name '*.html' -print0 \
+            | xargs -0 -r ./node_modules/.bin/html-validate --config .htmlvalidate.json
+        shell: bash
+
+      - name: Run CSS lint
+        run: |
+          find site/frontend/css -maxdepth 1 -type f -name '*.css' -print0 \
+            | xargs -0 -r ./node_modules/.bin/stylelint --config stylelint.config.cjs
+        shell: bash
+
+      - name: Run JavaScript lint
+        run: |
+          find site/frontend/js -maxdepth 1 -type f -name '*.js' -print0 \
+            | xargs -0 -r ./node_modules/.bin/eslint --config eslint.config.mjs
+        shell: bash
+
+      - name: Run yamllint
+        uses: ibiqlik/action-yamllint@2576378a8e339169678f9939646ee3ee325e845c  # v3
+
+      - name: Run markdownlint
+        uses: DavidAnson/markdownlint-cli2-action@ded1f9488f68a970bc66ea5619e13e9b52e601cd  # v23
