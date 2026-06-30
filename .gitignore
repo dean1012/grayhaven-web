@@ -1,0 +1,24 @@
+# Local environment
+.env
+.env.*
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Local Codex guidance
+AGENTS.md
+AGENTS.override.md
+.codex/
+
+# Logs
+*.log
+
+# Dependency directories
+node_modules/
+
+# Build output
+dist/
+build/
+.cache/
