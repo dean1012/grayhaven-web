@@ -11,6 +11,7 @@ Do not commit sensitive information to this repository.
 - [Push Confirmation Hook](#push-confirmation-hook)
 - [Validation](#validation)
 - [Pull Requests](#pull-requests)
+- [Production Promotion](#production-promotion)
 - [Website Style Guidelines](#website-style-guidelines)
 - [Deployment Cues](#deployment-cues)
 - [Documentation Guidelines](#documentation-guidelines)
@@ -127,6 +128,24 @@ through a pull request from `dev` to `main` after development review.
 
 CI runs on pushes, pull requests, and manual workflow dispatches. Pull requests
 are squash merged after CI passes and review conversations are resolved.
+
+[Back to top](#contributing)
+
+## Production Promotion
+
+After a `dev` to `main` pull request is squash merged, the repository
+maintainer should merge `main` back into `dev` locally so future production
+promotion pull requests contain only new changes:
+
+```bash
+git fetch origin
+git switch dev
+git pull --ff-only origin dev
+git merge --no-ff -S origin/main -m "Merge main back into dev"
+git push origin dev
+```
+
+If the pre-push hook prompts for confirmation, type `publish`.
 
 [Back to top](#contributing)
 
