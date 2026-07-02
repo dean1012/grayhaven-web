@@ -20,6 +20,12 @@ This repository does not contain sensitive data.
 - Validate website HTML, CSS, JavaScript, YAML, and Markdown through GitHub
   Actions.
 
+Continuous deployment is managed through GitHub repository variables and
+secrets. See the
+[hosted-domain repository setup](https://github.com/dean1012/grayhaven-vault-example/blob/main/docs/setup.md#set-up-hosted-domain-repositories)
+documentation in `grayhaven-vault-example` for the required deployment
+settings.
+
 This repository is not a general-purpose website template. Reusing it for
 another organization requires review, adaptation, and separate branding.
 
