@@ -1,6 +1,10 @@
 # Grayhaven Systems LLC Website
 
-[![CI](https://github.com/dean1012/grayhaven-web/actions/workflows/ci.yml/badge.svg)](https://github.com/dean1012/grayhaven-web/actions/workflows/ci.yml)
+| Check | Status |
+| --- | --- |
+| CI | [![CI](https://github.com/dean1012/grayhaven-web/actions/workflows/ci.yml/badge.svg)](https://github.com/dean1012/grayhaven-web/actions/workflows/ci.yml) |
+| Production | [![Prod Deploy](https://github.com/dean1012/grayhaven-web/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/dean1012/grayhaven-web/actions/workflows/deploy.yml?query=branch%3Amain) |
+| Development | [![Dev Deploy](https://github.com/dean1012/grayhaven-web/actions/workflows/deploy.yml/badge.svg?branch=dev)](https://github.com/dean1012/grayhaven-web/actions/workflows/deploy.yml?query=branch%3Adev) |
 
 This repository contains the Grayhaven Systems LLC website source. It is public
 for transparency and operational demonstration.
