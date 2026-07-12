@@ -27,6 +27,15 @@
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Grayhaven Systems LLC">
 
+    <!-- Twitter/X card; reuse the Open Graph image -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Grayhaven Systems LLC | Practical Infrastructure Consulting">
+    <meta
+      name="twitter:description"
+      content="Practical infrastructure automation, configuration management, infrastructure modernization, cloud migration, and Linux systems administration for small businesses and individuals worldwide.">
+    <meta name="twitter:image" content="https://grayhavensystems.com/assets/og-image.png">
+    <meta name="twitter:image:alt" content="Grayhaven Systems LLC">
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
@@ -35,13 +44,13 @@
     <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="css/fonts.css?v=20260711">
+    <link rel="stylesheet" href="css/fonts.css?v=20260712">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="css/fontawesome.min.css?v=20260711">
+    <link rel="stylesheet" href="css/fontawesome.min.css?v=20260712">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/site.css?v=20260711">
+    <link rel="stylesheet" href="css/site.css?v=20260712">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -71,9 +80,12 @@
               "HashiCorp Vault",
               "SELinux",
               "Grafana Cloud",
+              "Grafana IRM",
+              "Red Hat Enterprise Linux",
+              "Monitoring and alerting",
+              "Virtualization",
               "Ceph Storage",
-              "Proxmox",
-              "Multi-WAN Failover"
+              "Proxmox"
             ]
           },
           {
@@ -153,22 +165,24 @@
     <header class="site-header">
       <nav class="navbar" aria-label="Main navigation">
         <div class="navbar-brand">
-          <a href="./" aria-label="Grayhaven Systems home">
+          <a href="./" aria-label="Grayhaven Systems LLC home">
             <img
               src="assets/grayhaven-logo-wordmark-dark.svg"
-              alt="Grayhaven Systems"
+              alt="Grayhaven Systems LLC"
               class="navbar-logo">
           </a>
         </div>
 
         <div class="navbar-menu">
-          <input class="navbar-menu-toggle" type="checkbox" id="navbarMenuToggle">
+          <input
+            class="navbar-menu-toggle"
+            type="checkbox"
+            id="navbarMenuToggle"
+            aria-controls="navMenu">
           <label
             class="navbar-toggle"
             for="navbarMenuToggle"
-            aria-label="Toggle navigation"
-            aria-expanded="false"
-          >
+            aria-label="Toggle navigation">
             <span class="navbar-toggle-bar"></span>
             <span class="navbar-toggle-bar"></span>
             <span class="navbar-toggle-bar"></span>
@@ -203,7 +217,7 @@
         <div class="hero-content">
           <img
             src="assets/grayhaven-logo-wordmark-dark.svg"
-            alt="Grayhaven Systems"
+            alt="Grayhaven Systems LLC"
             class="hero-logo">
           <h1 class="hero-headline">
             <span class="hero-headline-line">Infrastructure Automation, Modernization</span>
@@ -744,7 +758,7 @@
           <div class="site-footer-brand">
             <img
               src="assets/grayhaven-logo-wordmark-dark.svg"
-              alt="Grayhaven Systems"
+              alt="Grayhaven Systems LLC"
               class="site-footer-logo">
             <p class="site-footer-tagline">
               Reliable systems.<br>
@@ -850,6 +864,6 @@
         </div>
       </div>
     </footer>
-    <script src="js/site.js?v=20260711"></script>
+    <script src="js/site.js?v=20260712"></script>
   </body>
 </html>
