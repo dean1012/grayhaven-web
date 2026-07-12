@@ -150,10 +150,10 @@
   </head>
   <body>
     <!-- ===== STICKY NAVIGATION BAR ===== -->
-    <header class="site-header" id="top">
+    <header class="site-header">
       <nav class="navbar" aria-label="Main navigation">
         <div class="navbar-brand">
-          <a href="#top" aria-label="Grayhaven Systems home">
+          <a href="./" aria-label="Grayhaven Systems home">
             <img
               src="assets/grayhaven-logo-wordmark-dark.svg"
               alt="Grayhaven Systems"
@@ -161,28 +161,29 @@
           </a>
         </div>
 
-        <button
-          class="navbar-toggle"
-          id="navToggle"
-          type="button"
-          aria-label="Toggle navigation"
-          aria-expanded="false"
-          aria-controls="navMenu"
-        >
-          <span class="navbar-toggle-bar"></span>
-          <span class="navbar-toggle-bar"></span>
-          <span class="navbar-toggle-bar"></span>
-        </button>
+        <div class="navbar-menu">
+          <input class="navbar-menu-toggle" type="checkbox" id="navbarMenuToggle">
+          <label
+            class="navbar-toggle"
+            for="navbarMenuToggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <span class="navbar-toggle-bar"></span>
+            <span class="navbar-toggle-bar"></span>
+            <span class="navbar-toggle-bar"></span>
+          </label>
 
-        <ul class="navbar-links" id="navMenu">
-          <li><a href="#top">Home</a></li>
-          <li><a href="#what-we-do">What We Do</a></li>
-          <li><a href="#automation">Infrastructure Automation</a></li>
-          <li><a href="#config">Configuration Management</a></li>
-          <li><a href="#cloud">Infrastructure Modernization &amp; Cloud Migration</a></li>
-          <li><a href="#linux">Linux Systems Administration</a></li>
-          <li><a href="#examples">Selected Projects</a></li>
-        </ul>
+          <ul class="navbar-links" id="navMenu">
+            <li><a href="./">Home</a></li>
+            <li><a href="#what-we-do">What We Do</a></li>
+            <li><a href="#automation">Infrastructure Automation</a></li>
+            <li><a href="#config">Configuration Management</a></li>
+            <li><a href="#cloud">Infrastructure Modernization &amp; Cloud Migration</a></li>
+            <li><a href="#linux">Linux Systems Administration</a></li>
+            <li><a href="#examples">Selected Projects</a></li>
+          </ul>
+        </div>
 
         <a
           href="https://calendar.proton.me/bookings#HmPL_I2j-XCVf8y4lj2ikbmIGhzdlHxXJ7MnBngp-i8="
@@ -205,12 +206,12 @@
             alt="Grayhaven Systems"
             class="hero-logo">
           <h1 class="hero-headline">
-            <span class="hero-headline-line">Infrastructure Automation</span>
+            <span class="hero-headline-line">Infrastructure Automation, Modernization</span>
             <span class="hero-headline-line hero-headline-ampersand">&amp;</span>
-            <span class="hero-headline-line">Infrastructure Modernization &amp; Cloud Migration Consulting</span>
+            <span class="hero-headline-line">Cloud Migration Consulting</span>
           </h1>
           <p class="hero-subtext">
-            Remote infrastructure and cloud consulting for small businesses and individuals
+            Practical infrastructure and cloud consulting for small businesses and individuals
             worldwide. We build reliable automation, modernize systems, and improve day-to-day
             operations without unnecessary enterprise overhead.
           </p>
@@ -840,7 +841,6 @@
         </div>
       </div>
     </footer>
-
     <script src="js/site.js"></script>
   </body>
 </html>

@@ -1,109 +1,78 @@
 /**
- * Grayhaven Systems LLC — Site JavaScript
- * Handles: mobile nav toggle and active nav state
- * Vanilla JS — no dependencies
+ * Grayhaven Systems LLC — progressive navigation enhancements
+ *
+ * Native HTML and CSS provide navigation and scrolling when JavaScript is
+ * unavailable. This layer only closes the mobile menu after navigation and
+ * highlights the section currently in view when supported.
  */
 
 (function () {
   'use strict';
 
-  const desktopNavQuery = window.matchMedia('(min-width: 1721px)');
-
-  /* ===== MOBILE NAV TOGGLE ===== */
-  const navToggle = document.getElementById('navToggle');
+  const menuToggle = document.getElementById('navbarMenuToggle');
+  const menuToggleLabel = document.querySelector('label[for="navbarMenuToggle"]');
   const navMenu = document.getElementById('navMenu');
+  const navLinks = navMenu ? navMenu.querySelectorAll('a') : [];
+  const sections = document.querySelectorAll('section[id]');
 
-  if (navToggle && navMenu) {
-    navToggle.addEventListener('click', function () {
-      const isOpen = navMenu.classList.toggle('is-open');
-      navToggle.setAttribute('aria-expanded', String(isOpen));
-    });
+  const setActiveNav = function (id) {
+    const activeId = id === 'hero' ? 'top' : id;
 
-    navMenu.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        if (!desktopNavQuery.matches) {
-          navMenu.classList.remove('is-open');
-          navToggle.setAttribute('aria-expanded', 'false');
-        }
-      });
-    });
+    navLinks.forEach(function (link) {
+      const isActive = link.getAttribute('href') === '#' + activeId;
 
-    window.addEventListener('resize', function () {
-      if (desktopNavQuery.matches) {
-        navMenu.classList.remove('is-open');
-        navToggle.setAttribute('aria-expanded', 'false');
+      link.classList.toggle('is-active', isActive);
+
+      if (isActive) {
+        link.setAttribute('aria-current', 'location');
+      } else {
+        link.removeAttribute('aria-current');
       }
+    });
+  };
+
+  setActiveNav('top');
+
+  if (menuToggle && menuToggleLabel) {
+    menuToggleLabel.addEventListener('click', function (event) {
+      event.preventDefault();
+      menuToggle.checked = !menuToggle.checked;
+      menuToggleLabel.setAttribute('aria-expanded', String(menuToggle.checked));
     });
   }
 
-  /* ===== HOME LINK — SCROLL TO TOP ===== */
-  document.querySelectorAll('a[href="#top"]').forEach(function (link) {
-    link.addEventListener('click', function (event) {
-      event.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
-      });
+  navLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      if (menuToggle) {
+        menuToggle.checked = false;
+      }
+
+      if (menuToggleLabel) {
+        menuToggleLabel.setAttribute('aria-expanded', 'false');
+      }
+
+      const href = link.getAttribute('href');
+      const targetId = href === './' ? 'top' : href.startsWith('#') ? href.slice(1) : '';
+      if (targetId) {
+        setActiveNav(targetId);
+      }
     });
   });
 
-  /* ===== ACTIVE NAV HIGHLIGHT ===== */
-  const navLinks = document.querySelectorAll('.navbar-links a');
-  const sections = document.querySelectorAll('section[id], header[id]');
-
-  if (navLinks.length > 0 && sections.length > 0) {
-    const setActiveNav = function (id) {
-      navLinks.forEach(function (link) {
-        const href = link.getAttribute('href');
-        const isActive = href === '#' + id;
-
-        link.classList.toggle('is-active', isActive);
-
-        if (isActive) {
-          link.setAttribute('aria-current', 'location');
-        } else {
-          link.removeAttribute('aria-current');
-        }
-      });
-    };
-
-    const updateActiveNavFallback = function () {
-      const scrollPosition = window.scrollY + 80;
-      let activeId = sections[0].getAttribute('id');
-
-      sections.forEach(function (section) {
-        if (section.offsetTop <= scrollPosition) {
-          activeId = section.getAttribute('id');
-        }
-      });
-
-      setActiveNav(activeId);
-    };
-
-    if (!('IntersectionObserver' in window)) {
-      window.addEventListener('scroll', updateActiveNavFallback, { passive: true });
-      window.addEventListener('resize', updateActiveNavFallback);
-      updateActiveNavFallback();
-      return;
-    }
-
-    const observerOptions = {
-      rootMargin: '-60px 0px -70% 0px',
-      threshold: 0
-    };
-
+  if ('IntersectionObserver' in window && sections.length > 0) {
     const navObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          setActiveNav(id);
+          setActiveNav(entry.target.id);
         }
       });
-    }, observerOptions);
+    }, {
+      rootMargin: '-60px 0px -70% 0px',
+      threshold: 0
+    });
 
     sections.forEach(function (section) {
       navObserver.observe(section);
     });
   }
-
 })();
