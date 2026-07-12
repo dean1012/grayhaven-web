@@ -1,27 +1,846 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Grayhaven Systems LLC</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grayhaven Systems LLC | Remote Infrastructure Consulting</title>
+    <meta
+      name="description"
+      content="Remote infrastructure automation, configuration management, infrastructure modernization, cloud migration, and Linux systems administration for small businesses and individuals worldwide.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grayhavensystems.com/">
+
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#1C1F24">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grayhavensystems.com/">
+    <meta property="og:title" content="Grayhaven Systems LLC | Remote Infrastructure Consulting">
+    <meta
+      property="og:description"
+      content="Remote infrastructure automation, configuration management, infrastructure modernization, cloud migration, and Linux systems administration for small businesses and individuals worldwide.">
+    <meta property="og:site_name" content="Grayhaven Systems LLC">
+    <meta property="og:image" content="https://grayhavensystems.com/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Grayhaven Systems LLC">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="css/fonts.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="css/site.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://grayhavensystems.com/#organization",
+            "name": "Grayhaven Systems LLC",
+            "legalName": "Grayhaven Systems LLC",
+            "url": "https://grayhavensystems.com",
+            "logo": "https://grayhavensystems.com/assets/grayhaven-logo-wordmark-dark.svg",
+            "telephone": "+1-512-610-0899",
+            "description": "Remote infrastructure automation, configuration management, infrastructure modernization, cloud migration, and Linux systems administration for small businesses and individuals worldwide.",
+            "areaServed": "Worldwide",
+            "sameAs": ["https://github.com/dean1012"],
+            "knowsAbout": [
+              "Infrastructure automation",
+              "Configuration management",
+              "Infrastructure modernization",
+              "Cloud migration",
+              "Linux systems administration",
+              "Ansible",
+              "OpenTofu",
+              "Terraform",
+              "HashiCorp Vault",
+              "SELinux",
+              "Grafana Cloud",
+              "Ceph Storage",
+              "Proxmox",
+              "Multi-WAN Failover"
+            ]
+          },
+          {
+            "@type": "Service",
+            "name": "Infrastructure Automation",
+            "serviceType": "Infrastructure automation consulting",
+            "provider": { "@id": "https://grayhavensystems.com/#organization" },
+            "areaServed": "Worldwide",
+            "availableChannel": [
+              { "@type": "ServiceChannel", "name": "Remote consulting", "serviceType": "Remote" },
+              {
+                "@type": "ServiceChannel",
+                "name": "On-site consulting in Houston, Texas and the surrounding area",
+                "serviceType": "On-site",
+                "serviceLocation": { "@type": "Place", "name": "Houston, Texas and surrounding area" }
+              }
+            ],
+            "description": "Declarative infrastructure provisioning and lifecycle management using OpenTofu, Terraform, and related automation tooling."
+          },
+          {
+            "@type": "Service",
+            "name": "Configuration Management",
+            "serviceType": "Configuration management consulting",
+            "provider": { "@id": "https://grayhavensystems.com/#organization" },
+            "areaServed": "Worldwide",
+            "availableChannel": [
+              { "@type": "ServiceChannel", "name": "Remote consulting", "serviceType": "Remote" },
+              {
+                "@type": "ServiceChannel",
+                "name": "On-site consulting in Houston, Texas and the surrounding area",
+                "serviceType": "On-site",
+                "serviceLocation": { "@type": "Place", "name": "Houston, Texas and surrounding area" }
+              }
+            ],
+            "description": "Standardized server configuration with Ansible, Puppet, SaltStack, secret-management integration, and operational automation."
+          },
+          {
+            "@type": "Service",
+            "name": "Infrastructure Modernization & Cloud Migration",
+            "serviceType": "Infrastructure modernization and cloud migration consulting",
+            "provider": { "@id": "https://grayhavensystems.com/#organization" },
+            "areaServed": "Worldwide",
+            "availableChannel": [
+              { "@type": "ServiceChannel", "name": "Remote consulting", "serviceType": "Remote" },
+              {
+                "@type": "ServiceChannel",
+                "name": "On-site consulting in Houston, Texas and the surrounding area",
+                "serviceType": "On-site",
+                "serviceLocation": { "@type": "Place", "name": "Houston, Texas and surrounding area" }
+              }
+            ],
+            "description": "Legacy infrastructure assessment, migration planning and execution support, and phased cloud adoption for heterogeneous environments."
+          },
+          {
+            "@type": "Service",
+            "name": "Linux Systems Administration",
+            "serviceType": "Linux systems administration consulting",
+            "provider": { "@id": "https://grayhavensystems.com/#organization" },
+            "areaServed": "Worldwide",
+            "availableChannel": [
+              { "@type": "ServiceChannel", "name": "Remote consulting", "serviceType": "Remote" },
+              {
+                "@type": "ServiceChannel",
+                "name": "On-site consulting in Houston, Texas and the surrounding area",
+                "serviceType": "On-site",
+                "serviceLocation": { "@type": "Place", "name": "Houston, Texas and surrounding area" }
+              }
+            ],
+            "description": "Linux server hardening, SELinux policy management, root cause analysis, break/fix support, monitoring, storage, and virtualization support."
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
-    <main class="site-shell">
-      <section class="content-panel" aria-label="Grayhaven Systems LLC">
-        <h1 class="logo-heading">
-          <img
-            class="brand-logo"
-            src="assets/grayhaven-logo-wordmark.svg"
-            alt="Grayhaven Systems LLC"
+    <!-- ===== STICKY NAVIGATION BAR ===== -->
+    <header class="site-header">
+      <nav class="navbar" aria-label="Main navigation">
+        <div class="navbar-brand">
+          <a href="./" aria-label="Grayhaven Systems home">
+            <img
+              src="assets/grayhaven-logo-wordmark-dark.svg"
+              alt="Grayhaven Systems"
+              class="navbar-logo">
+          </a>
+        </div>
+
+        <div class="navbar-menu">
+          <input class="navbar-menu-toggle" type="checkbox" id="navbarMenuToggle">
+          <label
+            class="navbar-toggle"
+            for="navbarMenuToggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
           >
-        </h1>
-        <h2>Coming Soon</h2>
-        <p>
-          Contact us at
-          <a href="mailto:jsmith@grayhavensystems.com">jsmith@grayhavensystems.com</a>
-        </p>
+            <span class="navbar-toggle-bar"></span>
+            <span class="navbar-toggle-bar"></span>
+            <span class="navbar-toggle-bar"></span>
+          </label>
+
+          <ul class="navbar-links" id="navMenu">
+            <li><a href="./">Home</a></li>
+            <li><a href="#what-we-do">What We Do</a></li>
+            <li><a href="#automation">Infrastructure Automation</a></li>
+            <li><a href="#config">Configuration Management</a></li>
+            <li><a href="#cloud">Infrastructure Modernization &amp; Cloud Migration</a></li>
+            <li><a href="#linux">Linux Systems Administration</a></li>
+            <li><a href="#examples">Selected Projects</a></li>
+          </ul>
+        </div>
+
+        <a
+          href="https://calendar.proton.me/bookings#HmPL_I2j-XCVf8y4lj2ikbmIGhzdlHxXJ7MnBngp-i8="
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link-button navbar-contact"
+        >
+          <i class="fa-solid fa-video" aria-hidden="true"></i>
+          <span>Contact Us</span>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ===== HERO SECTION ===== -->
+      <section class="hero" id="hero">
+        <div class="hero-content">
+          <img
+            src="assets/grayhaven-logo-wordmark-dark.svg"
+            alt="Grayhaven Systems"
+            class="hero-logo">
+          <h1 class="hero-headline">
+            <span class="hero-headline-line">Infrastructure Automation, Modernization</span>
+            <span class="hero-headline-line hero-headline-ampersand">&amp;</span>
+            <span class="hero-headline-line">Cloud Migration Consulting</span>
+          </h1>
+          <p class="hero-subtext">
+            Practical infrastructure and cloud consulting for small businesses and individuals
+            worldwide. We build reliable automation, modernize systems, and improve day-to-day
+            operations without unnecessary enterprise overhead.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== WHAT WE DO SUMMARY GRID ===== -->
+      <section class="summary-section section-spacing" id="what-we-do">
+        <div class="container">
+          <h2 class="section-title">What We Do</h2>
+          <p class="section-subtitle">
+            Whether you need to automate or modernize your infrastructure, migrate your workloads to the cloud, or bring in experienced Linux support, we're here to help.
+          </p>
+
+          <div class="service-grid">
+            <!-- Card 1: Infrastructure Automation -->
+            <article class="service-card">
+              <div class="service-card-icon">
+                <i class="fa-solid fa-gear" aria-hidden="true"></i>
+              </div>
+              <h3 class="service-card-title">Infrastructure Automation</h3>
+              <p class="service-card-desc">
+                Declarative infrastructure provisioning and lifecycle management using modern IaC
+                tools.
+              </p>
+              <ul class="capability-list">
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Terraform / OpenTofu</li>
+                <li>
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> Reusable modules &amp; repeatable deployments
+                </li>
+                <li>
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> Version-controlled infrastructure changes
+                </li>
+              </ul>
+              <div class="service-card-actions">
+                <a href="#automation" class="scroll-link"
+                  >Explore infrastructure automation
+                  <i class="fa-solid fa-arrow-down" aria-hidden="true"></i
+                ></a>
+                <a
+                  href="https://github.com/dean1012/grayhaven-infra-opentofu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="external-link"
+                  >View on GitHub
+                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i
+                ></a>
+              </div>
+            </article>
+
+            <!-- Card 2: Configuration Management -->
+            <article class="service-card">
+              <div class="service-card-icon">
+                <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+              </div>
+              <h3 class="service-card-title">Configuration Management</h3>
+              <p class="service-card-desc">
+                Reduce manual work and improve reliability with consistent, repeatable server
+                configuration.
+              </p>
+              <ul class="capability-list">
+                <li>
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> Ansible, Puppet, SaltStack
+                </li>
+                <li>
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> HashiCorp Vault integration
+                </li>
+                <li>
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> Standardized server configuration
+                </li>
+              </ul>
+              <div class="service-card-actions">
+                <a href="#config" class="scroll-link"
+                  >Explore configuration management
+                  <i class="fa-solid fa-arrow-down" aria-hidden="true"></i
+                ></a>
+                <a
+                  href="https://github.com/dean1012/grayhaven-config-ansible"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="external-link"
+                  >View on GitHub
+                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i
+                ></a>
+              </div>
+            </article>
+
+            <!-- Card 3: Cloud Migration -->
+            <article class="service-card">
+              <div class="service-card-icon">
+                <i class="fa-solid fa-cloud" aria-hidden="true"></i>
+              </div>
+              <h3 class="service-card-title">Infrastructure Modernization &amp; Cloud Migration</h3>
+              <p class="service-card-desc">
+                Assess legacy systems and build a practical path to the cloud.
+              </p>
+              <ul class="capability-list">
+                <li>
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> Legacy system discovery
+                </li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Migration planning &amp; execution</li>
+                <li>
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> Hybrid &amp; multi-cloud architecture
+                </li>
+              </ul>
+              <div class="service-card-actions">
+                <a href="#cloud" class="scroll-link"
+                  >Explore infrastructure modernization and cloud migration
+                  <i class="fa-solid fa-arrow-down" aria-hidden="true"></i
+                ></a>
+              </div>
+            </article>
+
+            <!-- Card 4: Linux Systems Administration -->
+            <article class="service-card">
+              <div class="service-card-icon">
+                <i class="fa-brands fa-linux" aria-hidden="true"></i>
+              </div>
+              <h3 class="service-card-title">Linux Systems Administration</h3>
+              <p class="service-card-desc">
+                Business-focused Linux systems administration for secure, reliable, and maintainable
+                production environments.
+              </p>
+              <ul class="capability-list">
+                <li>
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> Server hardening &amp;
+                  SELinux
+                </li>
+                <li>
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> Root cause analysis &amp; break/fix support
+                </li>
+                <li>
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> Monitoring &amp; alerting
+                </li>
+              </ul>
+              <div class="service-card-actions">
+                <a href="#linux" class="scroll-link"
+                  >Explore Linux systems administration
+                  <i class="fa-solid fa-arrow-down" aria-hidden="true"></i
+                ></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== FIRST CTA PANEL ===== -->
+      <section class="cta-panel section-spacing">
+        <div class="container cta-panel-inner">
+          <h2 class="cta-panel-headline">Have an infrastructure challenge?</h2>
+          <a
+            href="https://calendar.proton.me/bookings#HmPL_I2j-XCVf8y4lj2ikbmIGhzdlHxXJ7MnBngp-i8="
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-button link-button-large"
+          >
+            <i class="fa-solid fa-video" aria-hidden="true"></i>
+            <span>Tell us what you’re working on</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ===== EXPANDED SERVICE SECTIONS ===== -->
+
+      <!-- #automation — Infrastructure Automation -->
+      <section class="expanded-section section-spacing" id="automation">
+        <div class="container">
+          <div class="expanded-section-icon">
+            <i class="fa-solid fa-gear" aria-hidden="true"></i>
+          </div>
+          <h2 class="expanded-section-title">Infrastructure Automation</h2>
+          <p class="expanded-section-desc">
+            We build declarative infrastructure using Terraform or OpenTofu as appropriate for the
+            project, managing resources across AWS, Google Cloud, Azure, or another platform of your
+            choice. Infrastructure changes stay version-controlled and reviewable across multiple
+            environments, with reusable modules, tag-based resource separation, and idempotent
+            operations supporting maintainable infrastructure over time.
+          </p>
+
+          <div class="capability-grid">
+            <ul class="capability-checklist">
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Terraform / OpenTofu IaC
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Multiple deployment
+                environments
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                Reusable infrastructure modules
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                Repeatable deployments
+              </li>
+            </ul>
+            <ul class="capability-checklist">
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Version-controlled
+                infrastructure changes
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                Tag-based resource separation
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Cloud resource lifecycle management
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Secret-aware state
+                management
+              </li>
+            </ul>
+          </div>
+
+          <div class="expanded-section-tech expanded-section-tech-with-repo">
+            <span class="tech-badge">Terraform</span>
+            <span class="tech-badge">OpenTofu</span>
+            <span class="tech-badge">AWS</span>
+            <span class="tech-badge">Google Cloud</span>
+            <span class="tech-badge">Azure</span>
+            <a
+              href="https://github.com/dean1012/grayhaven-infra-opentofu"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="external-link expanded-section-repo-link"
+              >View on GitHub
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- #config — Configuration Management -->
+      <section class="expanded-section section-spacing" id="config">
+        <div class="container">
+          <div class="expanded-section-icon">
+            <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+          </div>
+          <h2 class="expanded-section-title">Configuration Management</h2>
+          <p class="expanded-section-desc">
+            We use Ansible, Puppet, or SaltStack as appropriate for the project, and can work with
+            another configuration management tool of your choice. Idempotent configuration management
+            helps servers reach and maintain your desired configuration, reducing manual work and
+            improving reliability. Secrets can be managed through HashiCorp Vault or another secure
+            secret-management solution suited to the environment.
+          </p>
+
+          <div class="capability-grid">
+            <ul class="capability-checklist">
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Ansible, Puppet &amp;
+                SaltStack
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Standardized server
+                configuration
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                Configuration drift detection &amp; remediation
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Application and service
+                configuration
+              </li>
+            </ul>
+            <ul class="capability-checklist">
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Configuration validation
+                and testing
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Policy-based access
+                control
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Scoped firewall rules
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> HashiCorp Vault
+                integration
+              </li>
+            </ul>
+          </div>
+
+          <div class="expanded-section-tech expanded-section-tech-with-repo">
+            <span class="tech-badge">Ansible</span>
+            <span class="tech-badge">Puppet</span>
+            <span class="tech-badge">SaltStack</span>
+            <span class="tech-badge">Configuration Management</span>
+            <span class="tech-badge">Server Automation</span>
+            <span class="tech-badge">HashiCorp Vault</span>
+            <a
+              href="https://github.com/dean1012/grayhaven-config-ansible"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="external-link expanded-section-repo-link"
+              >View on GitHub
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- #cloud — Infrastructure Modernization & Cloud Migration -->
+      <section class="expanded-section section-spacing" id="cloud">
+        <div class="container">
+          <div class="expanded-section-icon">
+            <i class="fa-solid fa-cloud" aria-hidden="true"></i>
+          </div>
+          <h2 class="expanded-section-title">Infrastructure Modernization &amp; Cloud Migration</h2>
+          <p class="expanded-section-desc">
+            We assess legacy infrastructure and build a practical path to the cloud. Our work combines
+            comprehensive discovery across heterogeneous environments with migration planning,
+            execution support, and phased adoption strategies for single-cloud, hybrid, and multi-cloud
+            architectures. We can discover and migrate servers of any age, including Linux systems
+            across distributions and versions, giving organizations a practical path forward even when
+            environments are old or inconsistent.
+          </p>
+
+          <div class="capability-grid">
+            <ul class="capability-checklist">
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Legacy system discovery
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                Linux across distributions and versions
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                Single-cloud, hybrid &amp; multi-cloud architecture
+              </li>
+            </ul>
+            <ul class="capability-checklist">
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                Migration planning &amp; execution
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                Application and infrastructure dependency mapping
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                Legacy application compatibility assessment
+              </li>
+            </ul>
+          </div>
+
+          <div class="expanded-section-tech">
+            <span class="tech-badge">Infrastructure Discovery</span>
+            <span class="tech-badge">Cloud Migration</span>
+            <span class="tech-badge">AWS</span>
+            <span class="tech-badge">Google Cloud</span>
+            <span class="tech-badge">Azure</span>
+            <span class="tech-badge">Legacy Linux Systems</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- #linux — Linux Systems Administration -->
+      <section class="expanded-section section-spacing" id="linux">
+        <div class="container">
+          <div class="expanded-section-icon">
+            <i class="fa-brands fa-linux" aria-hidden="true"></i>
+          </div>
+          <h2 class="expanded-section-title">Linux Systems Administration</h2>
+          <p class="expanded-section-desc">
+            We monitor and manage production Linux systems with security, reliability, and
+            maintainability in mind. Our work includes server hardening, SELinux policy management,
+            root cause analysis, break/fix support, and monitoring and alerting using tools such as
+            Grafana Cloud with IRM, Zabbix, or Nagios. We also support storage and virtualization
+            platforms including Ceph, VMware ESXi/vSphere/vCenter, Proxmox, and KVM.
+          </p>
+
+          <div class="capability-grid">
+            <ul class="capability-checklist">
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Server hardening &amp;
+                SELinux
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                Root cause analysis &amp; break/fix support
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Monitoring &amp; alerting
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Secure remote access
+              </li>
+            </ul>
+            <ul class="capability-checklist">
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Ceph storage clusters
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Proxmox LXC hypervisors
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                VMware ESXi/vSphere/vCenter
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> KVM virtualization
+              </li>
+            </ul>
+          </div>
+
+          <div class="expanded-section-tech">
+            <span class="tech-badge">Red Hat Enterprise Linux</span>
+            <span class="tech-badge">SELinux</span>
+            <span class="tech-badge">Monitoring &amp; Alerting</span>
+            <span class="tech-badge">Virtualization</span>
+            <span class="tech-badge">Ceph</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SELECTED PROJECTS SECTION ===== -->
+      <section class="examples-section section-spacing" id="examples">
+        <div class="container">
+          <h2 class="section-title">Selected Projects</h2>
+          <p class="section-subtitle">
+            A few public repositories that show how we approach infrastructure, operations, and
+            automation.
+          </p>
+
+          <div class="repo-grid">
+            <!-- Repo Card 1 -->
+            <article class="repo-card">
+              <div class="repo-card-icon">
+                <i class="fa-solid fa-terminal" aria-hidden="true"></i>
+              </div>
+              <h3 class="repo-card-title">Backup Controller CLI</h3>
+              <p class="repo-card-desc">
+                Operator-friendly backup and restore utility for managed servers, wrapping restic
+                repositories with backup review, search, restore selection, and system-logged
+                operations.
+              </p>
+              <a
+                href="https://github.com/dean1012/grayhaven-backupctl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="external-link repo-card-link"
+                >View on GitHub
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i
+              ></a>
+            </article>
+
+            <!-- Repo Card 2 -->
+            <article class="repo-card">
+              <div class="repo-card-icon">
+                <i class="fa-solid fa-book" aria-hidden="true"></i>
+              </div>
+              <h3 class="repo-card-title">CPE Configuration &amp; Operations Guide</h3>
+              <p class="repo-card-desc">
+                Design and documentation for an Ansible-driven provisioning and lifecycle-management
+                system for customer-premises equipment, including VPN enrollment, dynamic inventory,
+                and operator runbooks.
+              </p>
+              <a
+                href="https://github.com/dean1012/portfolio-cpe-configuration-operations-guide"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="external-link repo-card-link"
+                >View on GitHub
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i
+              ></a>
+            </article>
+
+            <!-- Repo Card 3 -->
+            <article class="repo-card">
+              <div class="repo-card-icon">
+                <i class="fa-solid fa-network-wired" aria-hidden="true"></i>
+              </div>
+              <h3 class="repo-card-title">HE.net DNS Record Ansible Module</h3>
+              <p class="repo-card-desc">
+                Custom Ansible module for idempotent HE.net DNS record management when no suitable
+                provider module or API was available.
+              </p>
+              <a
+                href="https://github.com/dean1012/portfolio-henet-dnsrecord"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="external-link repo-card-link"
+                >View on GitHub
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i
+              ></a>
+            </article>
+          </div>
+
+          <div class="examples-section-more">
+            <a
+              href="https://github.com/dean1012?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="external-link"
+              >For more projects, see our full public repository list on GitHub.
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== FINAL CTA PANEL ===== -->
+      <section class="cta-panel section-spacing">
+        <div class="container cta-panel-inner">
+          <h2 class="cta-panel-headline">Let’s build a more reliable path forward.</h2>
+          <a
+            href="https://calendar.proton.me/bookings#HmPL_I2j-XCVf8y4lj2ikbmIGhzdlHxXJ7MnBngp-i8="
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-button link-button-large"
+          >
+            <i class="fa-solid fa-video" aria-hidden="true"></i>
+            <span>Request a consultation</span>
+          </a>
+        </div>
       </section>
     </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer-main">
+          <div class="site-footer-brand">
+            <img
+              src="assets/grayhaven-logo-wordmark-dark.svg"
+              alt="Grayhaven Systems"
+              class="site-footer-logo">
+            <p class="site-footer-tagline">
+              Reliable systems.<br>
+              Thoughtful automation.<br>
+              Clear operations.
+            </p>
+          </div>
+
+          <div class="site-footer-repos">
+            <h4 class="site-footer-heading">Repositories</h4>
+            <div class="footer-repo-grid">
+              <a
+                href="https://github.com/dean1012/grayhaven-infra-opentofu"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-repo-card"
+              >
+                <i class="fa-solid fa-cube" aria-hidden="true"></i>
+                <span>Infrastructure (OpenTofu)</span>
+              </a>
+              <a
+                href="https://github.com/dean1012/grayhaven-config-ansible"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-repo-card"
+              >
+                <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+                <span>Configuration (Ansible)</span>
+              </a>
+              <a
+                href="https://github.com/dean1012/grayhaven-vault-example"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-repo-card"
+              >
+                <i class="fa-solid fa-key" aria-hidden="true"></i>
+                <span>Secret Management</span>
+              </a>
+              <a
+                href="https://github.com/dean1012/grayhaven-backupctl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-repo-card"
+              >
+                <i class="fa-solid fa-terminal" aria-hidden="true"></i>
+                <span>Backup Controller</span>
+              </a>
+              <a
+                href="https://github.com/dean1012/portfolio-cpe-configuration-operations-guide"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-repo-card"
+              >
+                <i class="fa-solid fa-book" aria-hidden="true"></i>
+                <span>CPE Operations Guide</span>
+              </a>
+              <a
+                href="https://github.com/dean1012/portfolio-henet-dnsrecord"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-repo-card"
+              >
+                <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                <span>HE.net DNS Record Ansible Module</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="site-footer-bottom">
+          <div class="site-footer-social">
+            <a
+              href="https://github.com/dean1012"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              class="site-footer-social-link"
+            >
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+            <a
+              href="https://calendar.proton.me/bookings#HmPL_I2j-XCVf8y4lj2ikbmIGhzdlHxXJ7MnBngp-i8="
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Request a consultation"
+              class="site-footer-social-link"
+            >
+              <i class="fa-solid fa-video" aria-hidden="true"></i>
+            </a>
+          </div>
+          <p class="site-footer-copyright">
+            &copy; 2026 Grayhaven Systems LLC. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/site.js"></script>
   </body>
 </html>
