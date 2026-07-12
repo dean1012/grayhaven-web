@@ -244,7 +244,7 @@ h6 {
   align-items: center;
   justify-content: space-between;
   gap: var(--space-sm);
-  max-width: var(--container-max);
+  max-width: none;
   margin-inline: auto;
   padding: 0 var(--container-padding);
   height: var(--navbar-height);
@@ -258,6 +258,7 @@ h6 {
 .navbar-brand {
   min-width: 0;
   flex-shrink: 0;
+  margin-right: auto;
 }
 
 .navbar-logo {
@@ -316,7 +317,6 @@ h6 {
 
 .navbar-contact {
   white-space: nowrap;
-  margin-left: auto;
   order: 2;
 }
 
@@ -580,6 +580,11 @@ h6 {
   border-top: 1px solid var(--charcoal-border);
 }
 
+.expanded-section-repo-link {
+  align-self: center;
+  margin-left: auto;
+}
+
 .tech-badge {
   display: inline-block;
   padding: 0.3rem 0.75rem;
@@ -696,7 +701,7 @@ h6 {
 
 .footer-repo-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-xs);
 }
 
@@ -710,6 +715,7 @@ h6 {
   background: rgb(42 47 54 / 60%);
   border: 1px solid var(--charcoal-border);
   border-radius: var(--border-radius-sm);
+  min-width: 0;
   transition: color var(--transition-fast), border-color var(--transition-fast);
 }
 
@@ -779,14 +785,68 @@ h6 {
 
 /* ===== RESPONSIVE BREAKPOINTS ===== */
 
+/* ---- Two-column repository grid (>= 900px) ---- */
+@media (width >=900px) {
+  .footer-repo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 /* ---- Tablet (>= 640px) ---- */
 @media (width >=640px) {
   :root {
     --container-padding: 2rem;
   }
+}
 
-  .footer-repo-grid {
-    grid-template-columns: repeat(3, 1fr);
+/* Keep mobile repository rows compact while preserving the full tag set on wider screens. */
+@media (width <768px) {
+  .expanded-section-tech-with-repo .tech-badge:nth-of-type(n + 4) {
+    display: none;
+  }
+}
+
+@media (width <=400px) {
+  .expanded-section-tech-with-repo .tech-badge:nth-of-type(n + 3) {
+    display: none;
+  }
+
+  .expanded-section-tech-with-repo .expanded-section-repo-link {
+    font-size: 0.8075rem;
+  }
+}
+
+/* ---- Narrow mobile header (<= 575px) ---- */
+@media (width <=575px) {
+  .navbar {
+    gap: 0.5rem;
+  }
+
+  .navbar-contact {
+    width: 2.75rem;
+    height: 2.75rem;
+    min-height: 2.75rem;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .navbar-contact span {
+    display: none;
+  }
+
+  .navbar-toggle {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .navbar-toggle-bar {
+    width: 1.35rem;
+  }
+
+  .navbar-links.is-open a {
+    font-size: 0.765rem;
+    line-height: 1.4;
+    white-space: normal;
   }
 }
 
@@ -821,13 +881,19 @@ h6 {
     justify-content: space-between;
   }
 
-  .footer-repo-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
-/* ---- Wide navigation (>= 1280px) ---- */
-@media (width >=1280px) {
+/* ---- Wide navigation (>= 1721px) ---- */
+@media (width >=1721px) {
+  .navbar {
+    max-width: none;
+    justify-content: flex-start;
+  }
+
+  .navbar-brand {
+    margin-right: 0;
+  }
+
   .hero-headline {
     margin-bottom: 3.8rem;
   }
@@ -838,6 +904,7 @@ h6 {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-left: var(--space-lg);
   }
 
   .navbar-toggle {
@@ -846,6 +913,7 @@ h6 {
 
   .navbar-contact {
     order: 2;
+    margin-left: auto;
   }
 
   .navbar-links.is-open {
@@ -859,8 +927,8 @@ h6 {
   }
 }
 
-/* ---- Wide Desktop (>= 1024px) ---- */
-@media (width >=1024px) {
+/* ---- Wide Desktop (>= 1120px) ---- */
+@media (width >=1120px) {
   :root {
     --container-padding: 2.5rem;
     --space-2xl: 7rem;
@@ -868,7 +936,7 @@ h6 {
   }
 
   .footer-repo-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
