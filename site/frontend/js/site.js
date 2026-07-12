@@ -7,7 +7,7 @@
 (function () {
   'use strict';
 
-  const desktopNavQuery = window.matchMedia('(min-width: 1280px)');
+  const desktopNavQuery = window.matchMedia('(min-width: 1721px)');
 
   /* ===== MOBILE NAV TOGGLE ===== */
   const navToggle = document.getElementById('navToggle');
