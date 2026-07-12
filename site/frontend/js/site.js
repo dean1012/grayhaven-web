@@ -19,7 +19,10 @@
     const activeId = id === 'hero' ? 'top' : id;
 
     navLinks.forEach(function (link) {
-      const isActive = link.getAttribute('href') === '#' + activeId;
+      const href = link.getAttribute('href');
+      const isActive = activeId === 'top'
+        ? href === './'
+        : href === '#' + activeId;
 
       link.classList.toggle('is-active', isActive);
 
@@ -32,6 +35,15 @@
   };
 
   setActiveNav('top');
+
+  const setHomeAtTop = function () {
+    if (window.scrollY <= 4) {
+      setActiveNav('top');
+    }
+  };
+
+  window.addEventListener('scroll', setHomeAtTop, { passive: true });
+  setHomeAtTop();
 
   if (menuToggle && menuToggleLabel) {
     menuToggleLabel.addEventListener('click', function (event) {
@@ -61,6 +73,11 @@
 
   if ('IntersectionObserver' in window && sections.length > 0) {
     const navObserver = new IntersectionObserver(function (entries) {
+      if (window.scrollY <= 4) {
+        setActiveNav('top');
+        return;
+      }
+
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           setActiveNav(entry.target.id);
