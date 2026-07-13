@@ -22,6 +22,8 @@ jobs:
         github.event_name != 'push'
         || !contains(github.event.head_commit.message, '[skip deploy]')
       )
+    outputs:
+      deployed: ${{ steps.trigger_deployment.outputs.deployed }}
 
     steps:
       - name: Wait for matching CI success
@@ -84,6 +86,7 @@ jobs:
           PY
 
       - name: Trigger website deployment
+        id: trigger_deployment
         env:
           WEBHOOK_URL: ${{ vars.GRAYHAVEN_DEPLOY_WEBHOOK_URL }}
           WEBHOOK_SECRET: ${{ secrets.GRAYHAVEN_DEPLOY_WEBHOOK_SECRET }}
@@ -106,6 +109,8 @@ jobs:
 
           if os.environ.get("WEBHOOK_DISABLED", "") == "true":
               print("Deployment webhook is disabled")
+              with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+                  output.write("deployed=false\n")
               raise SystemExit(0)
 
           webhook_url = os.environ.get("WEBHOOK_URL", "").strip()
@@ -154,4 +159,74 @@ jobs:
               raise
 
           print(response_body)
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              output.write("deployed=true\n")
           PY
+
+  indexnow:
+    needs: deploy
+    if: >-
+      needs.deploy.result == 'success'
+      && needs.deploy.outputs.deployed == 'true'
+      && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    continue-on-error: true
+
+    steps:
+      - name: Verify production deployment
+        run: |
+          set -euo pipefail
+
+          for attempt in $(seq 1 12); do
+            homepage_status=$(curl --silent --output /dev/null --write-out '%{http_code}' \
+              https://grayhavensystems.com/)
+            key_status=$(curl --silent --output /dev/null --write-out '%{http_code}' \
+              https://grayhavensystems.com/indexnow-key.txt)
+            if [ "$homepage_status" = "200" ] && [ "$key_status" = "200" ]; then
+              printf 'Production verification passed on attempt %s\n' "$attempt"
+              exit 0
+            fi
+            printf 'Production verification attempt %s: homepage=%s key=%s\n' \
+              "$attempt" "$homepage_status" "$key_status"
+            sleep 10
+          done
+
+          exit 1
+
+      - name: Notify IndexNow after production deployment
+        env:
+          INDEXNOW_KEY: bc79837cc000d3ae88d8f7c3e1e6e68ba131fd6a30d3c085590ed3e52dee28f2
+          INDEXNOW_KEY_LOCATION: https://grayhavensystems.com/indexnow-key.txt
+        run: |
+          set -euo pipefail
+
+          payload=$(python3 - <<'PY'
+          import json
+          import os
+
+          print(json.dumps({
+              "host": "grayhavensystems.com",
+              "key": os.environ["INDEXNOW_KEY"],
+              "keyLocation": os.environ["INDEXNOW_KEY_LOCATION"],
+              "urlList": ["https://grayhavensystems.com/"],
+          }))
+          PY
+          )
+
+          response_file=$(mktemp)
+          trap 'rm -f "$response_file"' EXIT
+          status_code=$(curl --silent --show-error --output "$response_file" \
+            --write-out '%{http_code}' \
+            --header 'Content-Type: application/json; charset=utf-8' \
+            --data "$payload" \
+            https://api.indexnow.org/indexnow)
+
+          cat "$response_file"
+          printf '\nIndexNow response: %s\n' "$status_code"
+          case "$status_code" in
+            200|202)
+              ;;
+            *)
+              exit 1
+              ;;
+          esac
