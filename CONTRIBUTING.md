@@ -9,6 +9,7 @@ Do not commit sensitive information to this repository.
 
 - [Development Setup](#development-setup)
 - [Push Confirmation Hook](#push-confirmation-hook)
+- [Development Workflow](#development-workflow)
 - [Validation](#validation)
 - [Pull Requests](#pull-requests)
 - [Production Promotion](#production-promotion)
@@ -56,6 +57,19 @@ cp templates/pre-push .githooks/pre-push
 chmod 0755 .githooks/pre-push
 git config core.hooksPath .githooks
 ```
+
+[Back to top](#contributing)
+
+## Development Workflow
+
+1. Create a GitHub issue for meaningful changes.
+2. Make the change directly on the `dev` branch.
+3. Sign all commits and reference the issue number.
+4. Validate changes locally.
+5. Push `dev` and test the development deployment.
+6. Create a pull request from `dev` to `main` for production promotion.
+7. Reference or close the issue number in the pull request as appropriate for
+   code review and merge.
 
 [Back to top](#contributing)
 
@@ -109,8 +123,9 @@ git diff --check
 
 Use GitHub issues to track meaningful changes.
 
-Create a focused feature branch and open a pull request into `dev`. Changes are
-not deployed to the development website until they are merged into `dev`.
+Make changes directly on `dev`. Changes pushed to `dev` are deployed to the
+development website for testing. After development validation, open a pull
+request from `dev` into `main` for production promotion.
 
 Reference the related issue in each commit and include
 `Closes #<issue-number>` in the pull request description when the pull request
