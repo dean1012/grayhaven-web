@@ -7,10 +7,6 @@
 !.vscode/extensions.json
 !.vscode/settings.json
 
-# Local Codex guidance
-AGENTS.md
-AGENTS.override.md
-.codex/
 
 # Local Git hooks
 .githooks/
