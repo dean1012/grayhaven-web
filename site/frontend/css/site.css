@@ -233,8 +233,13 @@ h6 {
   position: sticky;
   top: 0;
   z-index: 1000;
-  /* stylelint-disable-next-line color-function-alias-notation, color-function-notation, alpha-value-notation */
-  background: rgba(20, 20, 20, 0.35);
+  /* stylelint-disable color-function-alias-notation, color-function-notation, alpha-value-notation */
+  background:
+    linear-gradient(rgba(20, 20, 20, 0.35), rgba(20, 20, 20, 0.35)),
+    var(--bg-radial),
+    var(--bg-linear);
+  /* stylelint-enable color-function-alias-notation, color-function-notation, alpha-value-notation */
+  background-attachment: fixed;
   backdrop-filter: blur(22px);
   /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-backdrop-filter: blur(22px);
