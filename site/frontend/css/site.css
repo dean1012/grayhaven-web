@@ -233,9 +233,14 @@ h6 {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--navbar-bg);
-  backdrop-filter: var(--navbar-blur);
+  /* stylelint-disable-next-line color-function-alias-notation, color-function-notation, alpha-value-notation */
+  background: rgba(20, 20, 20, 0.35);
+  backdrop-filter: blur(22px);
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-backdrop-filter: blur(22px);
   border-bottom: 1px solid var(--charcoal-border);
+  /* stylelint-disable-next-line color-function-alias-notation, color-function-notation, alpha-value-notation */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .35), inset 0 1px rgba(255, 255, 255, .08);
 }
 
 .navbar {
