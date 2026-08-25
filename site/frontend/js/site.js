@@ -9,10 +9,8 @@
 (function () {
   'use strict';
 
-  const menuToggle = document.getElementById('navbarMenuToggle');
-  const menuToggleLabel = document.querySelector('label[for="navbarMenuToggle"]');
-  const navMenu = document.getElementById('navMenu');
-  const navLinks = navMenu ? navMenu.querySelectorAll('a') : [];
+  const mobileMenu = document.getElementById('navbarMobileMenu');
+  const navLinks = document.querySelectorAll('.navbar-links a');
   const sections = document.querySelectorAll('section[id]');
 
   const setActiveNav = function (id) {
@@ -45,22 +43,10 @@
   window.addEventListener('scroll', setHomeAtTop, { passive: true });
   setHomeAtTop();
 
-  if (menuToggle && menuToggleLabel) {
-    menuToggleLabel.addEventListener('click', function (event) {
-      event.preventDefault();
-      menuToggle.checked = !menuToggle.checked;
-      menuToggleLabel.setAttribute('aria-expanded', String(menuToggle.checked));
-    });
-  }
-
   navLinks.forEach(function (link) {
     link.addEventListener('click', function () {
-      if (menuToggle) {
-        menuToggle.checked = false;
-      }
-
-      if (menuToggleLabel) {
-        menuToggleLabel.setAttribute('aria-expanded', 'false');
+      if (mobileMenu) {
+        mobileMenu.removeAttribute('open');
       }
 
       const href = link.getAttribute('href');
