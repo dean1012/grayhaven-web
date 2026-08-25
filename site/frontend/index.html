@@ -166,7 +166,7 @@
   <body>
     <!-- ===== STICKY NAVIGATION BAR ===== -->
     <header class="site-header">
-      <nav class="navbar" aria-label="Main navigation">
+      <div class="navbar">
         <div class="navbar-brand">
           <a href="./" aria-label="Grayhaven Systems LLC home">
             <img
@@ -176,31 +176,30 @@
           </a>
         </div>
 
-        <div class="navbar-menu">
-          <input
-            class="navbar-menu-toggle"
-            type="checkbox"
-            id="navbarMenuToggle"
-            aria-controls="navMenu">
-          <label
-            class="navbar-toggle"
-            for="navbarMenuToggle"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggle-bar"></span>
-            <span class="navbar-toggle-bar"></span>
-            <span class="navbar-toggle-bar"></span>
-          </label>
+        <nav class="navbar-links navbar-links-desktop" aria-label="Desktop navigation">
+          <a href="./">Home</a>
+          <a href="#what-we-do">What We Do</a>
+          <a href="#automation">Infrastructure Automation</a>
+          <a href="#config">Configuration Management</a>
+          <a href="#cloud">Infrastructure Modernization &amp; Cloud Migration</a>
+          <a href="#linux">Linux Systems Administration</a>
+          <a href="#examples">Selected Projects</a>
+        </nav>
 
-          <ul class="navbar-links" id="navMenu">
-            <li><a href="./">Home</a></li>
-            <li><a href="#what-we-do">What We Do</a></li>
-            <li><a href="#automation">Infrastructure Automation</a></li>
-            <li><a href="#config">Configuration Management</a></li>
-            <li><a href="#cloud">Infrastructure Modernization &amp; Cloud Migration</a></li>
-            <li><a href="#linux">Linux Systems Administration</a></li>
-            <li><a href="#examples">Selected Projects</a></li>
-          </ul>
-        </div>
+        <details class="navbar-menu-mobile" id="navbarMobileMenu">
+          <summary class="navbar-toggle" aria-label="Main navigation menu">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          </summary>
+          <nav class="navbar-links navbar-links-mobile" aria-label="Mobile navigation">
+            <a href="./">Home</a>
+            <a href="#what-we-do">What We Do</a>
+            <a href="#automation">Infrastructure Automation</a>
+            <a href="#config">Configuration Management</a>
+            <a href="#cloud">Infrastructure Modernization &amp; Cloud Migration</a>
+            <a href="#linux">Linux Systems Administration</a>
+            <a href="#examples">Selected Projects</a>
+          </nav>
+        </details>
 
         <a
           href="https://calendar.proton.me/bookings#HmPL_I2j-XCVf8y4lj2ikbmIGhzdlHxXJ7MnBngp-i8="
@@ -211,7 +210,7 @@
           <i class="fa-solid fa-video" aria-hidden="true"></i>
           <span>Contact Us</span>
         </a>
-      </nav>
+      </div>
     </header>
 
     <main>
