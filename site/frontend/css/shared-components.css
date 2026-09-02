@@ -297,8 +297,16 @@ h3 {
 
 .button-primary:not(:disabled, [aria-disabled="true"]):hover {
   color: var(--deep-graphite);
-  background: var(--elevated-hover);
-  border-color: var(--elevated-hover);
+  background: color-mix(
+    in srgb,
+    var(--soft-white) 10%,
+    var(--primary-accent)
+  );
+  border-color: color-mix(
+    in srgb,
+    var(--soft-white) 10%,
+    var(--primary-accent)
+  );
 }
 
 .button-secondary {
@@ -308,7 +316,7 @@ h3 {
 
 .button-secondary:not(:disabled, [aria-disabled="true"]):hover {
   color: var(--soft-white);
-  background: var(--light-surface-accent);
+  background: color-mix(in srgb, var(--primary-accent) 10%, transparent);
   border-color: var(--primary-accent);
 }
 
@@ -320,8 +328,16 @@ h3 {
 
 .button-success:not(:disabled, [aria-disabled="true"]):hover {
   color: var(--deep-graphite);
-  background: var(--alert-success);
-  border-color: var(--alert-success);
+  background: color-mix(
+    in srgb,
+    var(--soft-white) 10%,
+    var(--muted-emerald)
+  );
+  border-color: color-mix(
+    in srgb,
+    var(--soft-white) 10%,
+    var(--muted-emerald)
+  );
 }
 
 .button-danger {
@@ -332,8 +348,16 @@ h3 {
 
 .button-danger:not(:disabled, [aria-disabled="true"]):hover {
   color: var(--soft-white);
-  background: color-mix(in srgb, var(--alert-error) 70%, var(--deep-graphite));
-  border-color: color-mix(in srgb, var(--alert-error) 70%, var(--deep-graphite));
+  background: color-mix(
+    in srgb,
+    var(--deep-graphite) 10%,
+    color-mix(in srgb, var(--alert-error) 82%, var(--deep-graphite))
+  );
+  border-color: color-mix(
+    in srgb,
+    var(--deep-graphite) 10%,
+    color-mix(in srgb, var(--alert-error) 82%, var(--deep-graphite))
+  );
 }
 
 .button-stop {
@@ -343,7 +367,11 @@ h3 {
 }
 
 .button-stop:not(:disabled, [aria-disabled="true"]):hover {
-  background: color-mix(in srgb, var(--alert-error) 25%, transparent);
+  background: color-mix(
+    in srgb,
+    var(--alert-error) 10%,
+    color-mix(in srgb, var(--alert-error) 14%, transparent)
+  );
   border-color: var(--alert-error);
 }
 
