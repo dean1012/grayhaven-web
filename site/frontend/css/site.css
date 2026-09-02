@@ -542,8 +542,8 @@ html:not(.js-enabled) body:has(#examples:target)
 .capability-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-md);
-  margin-bottom: var(--space-xl);
+  gap: 0 var(--space-md);
+  margin-bottom: calc(var(--space-xl) - var(--space-md));
 }
 
 .expanded-section-desc {
