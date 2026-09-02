@@ -211,6 +211,31 @@ h6 {
   border-color: var(--primary-accent);
 }
 
+html:not(.js-enabled)
+  body:not(:has(
+    #what-we-do:target,
+    #automation:target,
+    #config:target,
+    #cloud:target,
+    #linux:target,
+    #examples:target
+  ))
+  [data-section-nav] a[data-section-id="top"],
+html:not(.js-enabled) body:has(#what-we-do:target)
+  [data-section-nav] a[href="#what-we-do"],
+html:not(.js-enabled) body:has(#automation:target)
+  [data-section-nav] a[href="#automation"],
+html:not(.js-enabled) body:has(#config:target)
+  [data-section-nav] a[href="#config"],
+html:not(.js-enabled) body:has(#cloud:target)
+  [data-section-nav] a[href="#cloud"],
+html:not(.js-enabled) body:has(#linux:target)
+  [data-section-nav] a[href="#linux"],
+html:not(.js-enabled) body:has(#examples:target)
+  [data-section-nav] a[href="#examples"] {
+  color: var(--primary-accent);
+}
+
 .hero {
   display: flex;
   align-items: center;
