@@ -48,9 +48,10 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="css/fontawesome.min.css?v=20260712">
+    <link rel="stylesheet" href="css/shared-components.css?v=20260902b">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/site.css?v=20260825">
+    <link rel="stylesheet" href="css/site.css?v=20260902">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -163,7 +164,7 @@
       }
     </script>
   </head>
-  <body>
+  <body data-section-default="top">
     <!-- ===== STICKY NAVIGATION BAR ===== -->
     <header class="site-header">
       <div class="navbar">
@@ -176,8 +177,8 @@
           </a>
         </div>
 
-        <nav class="navbar-links navbar-links-desktop" aria-label="Desktop navigation">
-          <a href="./">Home</a>
+        <nav class="navbar-links navbar-links-desktop" data-section-nav aria-label="Desktop navigation">
+          <a href="./" data-section-id="top">Home</a>
           <a href="#what-we-do">What We Do</a>
           <a href="#automation">Infrastructure Automation</a>
           <a href="#config">Configuration Management</a>
@@ -186,12 +187,12 @@
           <a href="#examples">Selected Projects</a>
         </nav>
 
-        <details class="navbar-menu-mobile" id="navbarMobileMenu">
+        <details class="navbar-menu-mobile" data-mobile-nav>
           <summary class="navbar-toggle" aria-label="Main navigation menu">
             <i class="fa-solid fa-bars" aria-hidden="true"></i>
           </summary>
-          <nav class="navbar-links navbar-links-mobile" aria-label="Mobile navigation">
-            <a href="./">Home</a>
+          <nav class="navbar-links navbar-links-mobile" data-section-nav aria-label="Mobile navigation">
+            <a href="./" data-section-id="top">Home</a>
             <a href="#what-we-do">What We Do</a>
             <a href="#automation">Infrastructure Automation</a>
             <a href="#config">Configuration Management</a>
@@ -205,7 +206,8 @@
           href="https://calendar.proton.me/bookings#HmPL_I2j-XCVf8y4lj2ikbmIGhzdlHxXJ7MnBngp-i8="
           target="_blank"
           rel="noopener noreferrer"
-          class="link-button navbar-contact"
+          class="button button-secondary navbar-contact"
+          aria-label="Contact Grayhaven Systems LLC"
         >
           <i class="fa-solid fa-video" aria-hidden="true"></i>
           <span>Contact Us</span>
@@ -244,16 +246,16 @@
 
           <div class="service-grid">
             <!-- Card 1: Infrastructure Automation -->
-            <article class="service-card">
-              <div class="service-card-icon">
+            <article class="content-card">
+              <div class="content-card-icon">
                 <i class="fa-solid fa-gear" aria-hidden="true"></i>
               </div>
-              <h3 class="service-card-title">Infrastructure Automation</h3>
-              <p class="service-card-desc">
+              <h3 class="content-card-title">Infrastructure Automation</h3>
+              <p class="content-card-description">
                 Declarative infrastructure provisioning and lifecycle management using modern IaC
                 tools.
               </p>
-              <ul class="capability-list">
+              <ul class="check-list-quiet">
                 <li><i class="fa-solid fa-check" aria-hidden="true"></i> Terraform / OpenTofu</li>
                 <li>
                   <i class="fa-solid fa-check" aria-hidden="true"></i> Reusable modules &amp; repeatable deployments
@@ -262,7 +264,7 @@
                   <i class="fa-solid fa-check" aria-hidden="true"></i> Version-controlled infrastructure changes
                 </li>
               </ul>
-              <div class="service-card-actions">
+              <div class="content-card-actions">
                 <a href="#automation" class="scroll-link"
                   >Explore infrastructure automation
                   <i class="fa-solid fa-arrow-down" aria-hidden="true"></i
@@ -279,16 +281,16 @@
             </article>
 
             <!-- Card 2: Configuration Management -->
-            <article class="service-card">
-              <div class="service-card-icon">
+            <article class="content-card">
+              <div class="content-card-icon">
                 <i class="fa-solid fa-sliders" aria-hidden="true"></i>
               </div>
-              <h3 class="service-card-title">Configuration Management</h3>
-              <p class="service-card-desc">
+              <h3 class="content-card-title">Configuration Management</h3>
+              <p class="content-card-description">
                 Reduce manual work and improve reliability with consistent, repeatable server
                 configuration.
               </p>
-              <ul class="capability-list">
+              <ul class="check-list-quiet">
                 <li>
                   <i class="fa-solid fa-check" aria-hidden="true"></i> Ansible, Puppet, SaltStack
                 </li>
@@ -299,7 +301,7 @@
                   <i class="fa-solid fa-check" aria-hidden="true"></i> Standardized server configuration
                 </li>
               </ul>
-              <div class="service-card-actions">
+              <div class="content-card-actions">
                 <a href="#config" class="scroll-link"
                   >Explore configuration management
                   <i class="fa-solid fa-arrow-down" aria-hidden="true"></i
@@ -316,15 +318,15 @@
             </article>
 
             <!-- Card 3: Cloud Migration -->
-            <article class="service-card">
-              <div class="service-card-icon">
+            <article class="content-card">
+              <div class="content-card-icon">
                 <i class="fa-solid fa-cloud" aria-hidden="true"></i>
               </div>
-              <h3 class="service-card-title">Infrastructure Modernization &amp; Cloud Migration</h3>
-              <p class="service-card-desc">
+              <h3 class="content-card-title">Infrastructure Modernization &amp; Cloud Migration</h3>
+              <p class="content-card-description">
                 Assess legacy systems and build a practical path to the cloud.
               </p>
-              <ul class="capability-list">
+              <ul class="check-list-quiet">
                 <li>
                   <i class="fa-solid fa-check" aria-hidden="true"></i> Legacy system discovery
                 </li>
@@ -333,7 +335,7 @@
                   <i class="fa-solid fa-check" aria-hidden="true"></i> Hybrid &amp; multi-cloud architecture
                 </li>
               </ul>
-              <div class="service-card-actions">
+              <div class="content-card-actions">
                 <a href="#cloud" class="scroll-link"
                   >Explore infrastructure modernization and cloud migration
                   <i class="fa-solid fa-arrow-down" aria-hidden="true"></i
@@ -342,16 +344,16 @@
             </article>
 
             <!-- Card 4: Linux Systems Administration -->
-            <article class="service-card">
-              <div class="service-card-icon">
+            <article class="content-card">
+              <div class="content-card-icon">
                 <i class="fa-brands fa-linux" aria-hidden="true"></i>
               </div>
-              <h3 class="service-card-title">Linux Systems Administration</h3>
-              <p class="service-card-desc">
+              <h3 class="content-card-title">Linux Systems Administration</h3>
+              <p class="content-card-description">
                 Business-focused Linux systems administration for secure, reliable, and maintainable
                 production environments.
               </p>
-              <ul class="capability-list">
+              <ul class="check-list-quiet">
                 <li>
                   <i class="fa-solid fa-check" aria-hidden="true"></i> Server hardening &amp;
                   SELinux
@@ -363,7 +365,7 @@
                   <i class="fa-solid fa-check" aria-hidden="true"></i> Monitoring &amp; alerting
                 </li>
               </ul>
-              <div class="service-card-actions">
+              <div class="content-card-actions">
                 <a href="#linux" class="scroll-link"
                   >Explore Linux systems administration
                   <i class="fa-solid fa-arrow-down" aria-hidden="true"></i
@@ -382,7 +384,7 @@
             href="https://calendar.proton.me/bookings#HmPL_I2j-XCVf8y4lj2ikbmIGhzdlHxXJ7MnBngp-i8="
             target="_blank"
             rel="noopener noreferrer"
-            class="link-button link-button-large"
+            class="button button-secondary button-large"
           >
             <i class="fa-solid fa-video" aria-hidden="true"></i>
             <span>Tell us what you’re working on</span>
@@ -408,7 +410,7 @@
           </p>
 
           <div class="capability-grid">
-            <ul class="capability-checklist">
+            <ul class="check-list">
               <li>
                 <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Terraform / OpenTofu IaC
               </li>
@@ -425,7 +427,7 @@
                 Repeatable deployments
               </li>
             </ul>
-            <ul class="capability-checklist">
+            <ul class="check-list">
               <li>
                 <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Version-controlled
                 infrastructure changes
@@ -445,11 +447,11 @@
           </div>
 
           <div class="expanded-section-tech expanded-section-tech-with-repo">
-            <span class="tech-badge">Terraform</span>
-            <span class="tech-badge">OpenTofu</span>
-            <span class="tech-badge">AWS</span>
-            <span class="tech-badge">Google Cloud</span>
-            <span class="tech-badge">Azure</span>
+            <span class="badge">Terraform</span>
+            <span class="badge">OpenTofu</span>
+            <span class="badge">AWS</span>
+            <span class="badge">Google Cloud</span>
+            <span class="badge">Azure</span>
             <a
               href="https://github.com/dean1012/grayhaven-infra-opentofu"
               target="_blank"
@@ -478,7 +480,7 @@
           </p>
 
           <div class="capability-grid">
-            <ul class="capability-checklist">
+            <ul class="check-list">
               <li>
                 <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Ansible, Puppet &amp;
                 SaltStack
@@ -496,7 +498,7 @@
                 configuration
               </li>
             </ul>
-            <ul class="capability-checklist">
+            <ul class="check-list">
               <li>
                 <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Configuration validation
                 and testing
@@ -516,12 +518,12 @@
           </div>
 
           <div class="expanded-section-tech expanded-section-tech-with-repo">
-            <span class="tech-badge">Ansible</span>
-            <span class="tech-badge">Puppet</span>
-            <span class="tech-badge">SaltStack</span>
-            <span class="tech-badge">Configuration Management</span>
-            <span class="tech-badge">Server Automation</span>
-            <span class="tech-badge">HashiCorp Vault</span>
+            <span class="badge">Ansible</span>
+            <span class="badge">Puppet</span>
+            <span class="badge">SaltStack</span>
+            <span class="badge">Configuration Management</span>
+            <span class="badge">Server Automation</span>
+            <span class="badge">HashiCorp Vault</span>
             <a
               href="https://github.com/dean1012/grayhaven-config-ansible"
               target="_blank"
@@ -551,7 +553,7 @@
           </p>
 
           <div class="capability-grid">
-            <ul class="capability-checklist">
+            <ul class="check-list">
               <li>
                 <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Legacy system discovery
               </li>
@@ -564,7 +566,7 @@
                 Single-cloud, hybrid &amp; multi-cloud architecture
               </li>
             </ul>
-            <ul class="capability-checklist">
+            <ul class="check-list">
               <li>
                 <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                 Migration planning &amp; execution
@@ -581,12 +583,12 @@
           </div>
 
           <div class="expanded-section-tech">
-            <span class="tech-badge">Infrastructure Discovery</span>
-            <span class="tech-badge">Cloud Migration</span>
-            <span class="tech-badge">AWS</span>
-            <span class="tech-badge">Google Cloud</span>
-            <span class="tech-badge">Azure</span>
-            <span class="tech-badge">Legacy Linux Systems</span>
+            <span class="badge">Infrastructure Discovery</span>
+            <span class="badge">Cloud Migration</span>
+            <span class="badge">AWS</span>
+            <span class="badge">Google Cloud</span>
+            <span class="badge">Azure</span>
+            <span class="badge">Legacy Linux Systems</span>
           </div>
         </div>
       </section>
@@ -607,7 +609,7 @@
           </p>
 
           <div class="capability-grid">
-            <ul class="capability-checklist">
+            <ul class="check-list">
               <li>
                 <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Server hardening &amp;
                 SELinux
@@ -623,7 +625,7 @@
                 <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Secure remote access
               </li>
             </ul>
-            <ul class="capability-checklist">
+            <ul class="check-list">
               <li>
                 <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Ceph storage clusters
               </li>
@@ -641,11 +643,11 @@
           </div>
 
           <div class="expanded-section-tech">
-            <span class="tech-badge">Red Hat Enterprise Linux</span>
-            <span class="tech-badge">SELinux</span>
-            <span class="tech-badge">Monitoring &amp; Alerting</span>
-            <span class="tech-badge">Virtualization</span>
-            <span class="tech-badge">Ceph</span>
+            <span class="badge">Red Hat Enterprise Linux</span>
+            <span class="badge">SELinux</span>
+            <span class="badge">Monitoring &amp; Alerting</span>
+            <span class="badge">Virtualization</span>
+            <span class="badge">Ceph</span>
           </div>
         </div>
       </section>
@@ -661,12 +663,12 @@
 
           <div class="repo-grid">
             <!-- Repo Card 1 -->
-            <article class="repo-card">
-              <div class="repo-card-icon">
+            <article class="content-card content-card-compact">
+              <div class="content-card-icon">
                 <i class="fa-solid fa-terminal" aria-hidden="true"></i>
               </div>
-              <h3 class="repo-card-title">Backup Controller CLI</h3>
-              <p class="repo-card-desc">
+              <h3 class="content-card-title">Backup Controller CLI</h3>
+              <p class="content-card-description">
                 Operator-friendly backup and restore utility for managed servers, wrapping restic
                 repositories with backup review, search, restore selection, and system-logged
                 operations.
@@ -675,19 +677,19 @@
                 href="https://github.com/dean1012/grayhaven-backupctl"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="external-link repo-card-link"
+                class="external-link"
                 >View on GitHub
                 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i
               ></a>
             </article>
 
             <!-- Repo Card 2 -->
-            <article class="repo-card">
-              <div class="repo-card-icon">
+            <article class="content-card content-card-compact">
+              <div class="content-card-icon">
                 <i class="fa-solid fa-book" aria-hidden="true"></i>
               </div>
-              <h3 class="repo-card-title">CPE Configuration &amp; Operations Guide</h3>
-              <p class="repo-card-desc">
+              <h3 class="content-card-title">CPE Configuration &amp; Operations Guide</h3>
+              <p class="content-card-description">
                 Design and documentation for an Ansible-driven provisioning and lifecycle-management
                 system for customer-premises equipment, including VPN enrollment, dynamic inventory,
                 and operator runbooks.
@@ -696,19 +698,19 @@
                 href="https://github.com/dean1012/portfolio-cpe-configuration-operations-guide"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="external-link repo-card-link"
+                class="external-link"
                 >View on GitHub
                 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i
               ></a>
             </article>
 
             <!-- Repo Card 3 -->
-            <article class="repo-card">
-              <div class="repo-card-icon">
+            <article class="content-card content-card-compact">
+              <div class="content-card-icon">
                 <i class="fa-solid fa-network-wired" aria-hidden="true"></i>
               </div>
-              <h3 class="repo-card-title">HE.net DNS Record Ansible Module</h3>
-              <p class="repo-card-desc">
+              <h3 class="content-card-title">HE.net DNS Record Ansible Module</h3>
+              <p class="content-card-description">
                 Custom Ansible module for idempotent HE.net DNS record management when no suitable
                 provider module or API was available.
               </p>
@@ -716,7 +718,7 @@
                 href="https://github.com/dean1012/portfolio-henet-dnsrecord"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="external-link repo-card-link"
+                class="external-link"
                 >View on GitHub
                 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i
               ></a>
@@ -744,7 +746,7 @@
             href="https://calendar.proton.me/bookings#HmPL_I2j-XCVf8y4lj2ikbmIGhzdlHxXJ7MnBngp-i8="
             target="_blank"
             rel="noopener noreferrer"
-            class="link-button link-button-large"
+            class="button button-secondary button-large"
           >
             <i class="fa-solid fa-video" aria-hidden="true"></i>
             <span>Request a consultation</span>
@@ -776,7 +778,7 @@
                 href="https://github.com/dean1012/grayhaven-infra-opentofu"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="footer-repo-card"
+                class="resource-link-card"
               >
                 <i class="fa-solid fa-cube" aria-hidden="true"></i>
                 <span>Infrastructure (OpenTofu)</span>
@@ -785,7 +787,7 @@
                 href="https://github.com/dean1012/grayhaven-config-ansible"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="footer-repo-card"
+                class="resource-link-card"
               >
                 <i class="fa-solid fa-sliders" aria-hidden="true"></i>
                 <span>Configuration (Ansible)</span>
@@ -794,7 +796,7 @@
                 href="https://github.com/dean1012/grayhaven-vault-example"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="footer-repo-card"
+                class="resource-link-card"
               >
                 <i class="fa-solid fa-key" aria-hidden="true"></i>
                 <span>Secret Management</span>
@@ -803,7 +805,7 @@
                 href="https://github.com/dean1012/grayhaven-backupctl"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="footer-repo-card"
+                class="resource-link-card"
               >
                 <i class="fa-solid fa-terminal" aria-hidden="true"></i>
                 <span>Backup Controller</span>
@@ -812,7 +814,7 @@
                 href="https://github.com/dean1012/portfolio-cpe-configuration-operations-guide"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="footer-repo-card"
+                class="resource-link-card"
               >
                 <i class="fa-solid fa-book" aria-hidden="true"></i>
                 <span>CPE Operations Guide</span>
@@ -821,7 +823,7 @@
                 href="https://github.com/dean1012/portfolio-henet-dnsrecord"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="footer-repo-card"
+                class="resource-link-card"
               >
                 <i class="fa-solid fa-globe" aria-hidden="true"></i>
                 <span>HE.net DNS Record Ansible Module</span>
@@ -875,6 +877,6 @@
         </div>
       </div>
     </footer>
-    <script src="js/site.js?v=20260825"></script>
+    <script src="js/section-navigation.js?v=20260830" defer></script>
   </body>
 </html>
