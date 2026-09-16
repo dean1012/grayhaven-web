@@ -111,7 +111,7 @@ h6 {
   display: none;
 }
 
-.navbar-links a {
+.navbar-links a:not(:where(.button, .icon-button)) {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -122,7 +122,7 @@ h6 {
   transition: color var(--transition-fast);
 }
 
-.navbar-links-mobile a {
+.navbar-links-mobile a:not(:where(.button, .icon-button)) {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -130,14 +130,15 @@ h6 {
   padding: 0.7rem 0.25rem;
 }
 
-.navbar-links-mobile a + a {
+.navbar-links-mobile a:not(:where(.button, .icon-button))
+  + a:not(:where(.button, .icon-button)) {
   border-top: 1px solid color-mix(in srgb, var(--charcoal-border) 70%, transparent);
 }
 
-.navbar-links a:hover,
-.navbar-links a:focus-visible,
-.navbar-links a[aria-current],
-.navbar-links a.is-active {
+.navbar-links a:not(:where(.button, .icon-button)):hover,
+.navbar-links a:not(:where(.button, .icon-button)):focus-visible,
+.navbar-links a:not(:where(.button, .icon-button))[aria-current],
+.navbar-links a:not(:where(.button, .icon-button)).is-active {
   color: var(--primary-accent);
 }
 
@@ -432,7 +433,7 @@ html:not(.js-enabled) body:has(#examples:target)
     display: none;
   }
 
-  .navbar-links-mobile a {
+  .navbar-links-mobile a:not(:where(.button, .icon-button)) {
     font-size: 0.765rem;
     line-height: 1.4;
     white-space: normal;
@@ -514,7 +515,7 @@ html:not(.js-enabled) body:has(#examples:target)
     margin-left: auto;
   }
 
-  .navbar-links-desktop a {
+  .navbar-links-desktop a:not(:where(.button, .icon-button)) {
     display: inline;
     width: auto;
     padding: 0;
@@ -537,6 +538,11 @@ html:not(.js-enabled) body:has(#examples:target)
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-md);
+}
+
+/* These page grids own the spacing between their card children. */
+:is(.service-grid, .repo-grid) > .content-card {
+  margin-block: 0;
 }
 
 .capability-grid {
